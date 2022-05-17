@@ -1,0 +1,22 @@
+{
+	"clangd.arguments": ["--enable-config"],
+	"clangd.enabled": true,
+	"languageserver": {
+  "golang": {
+		"command": "gopls",
+    "rootPatterns": ["go.mod"],
+    "filetypes": ["go"]
+	  }
+	},
+	"explorer.sources":[
+		{
+			"name":"buffer",
+			"expand":false
+		},
+		{
+			"name":"file",
+			"expand":true
+		}
+	],
+	"explorer.icon.enableNerdfont":true
+}
