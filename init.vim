@@ -9,7 +9,7 @@ set shiftwidth=2
 set softtabstop=2
 set autoindent
 set list
-set listchars=tab:\|\ ,trail:▫
+set listchars=tab:\¦\ ,trail:▫
 set scrolloff=4
 set ttimeoutlen=0
 set notimeout
@@ -90,8 +90,10 @@ Plug 'mhinz/vim-startify'             " 开机界面
 Plug 'vim-airline/vim-airline-themes' " 命令行显示
 "Plug 'connorholyday/vim-snazzy' " vim主题插件
 "Plug 'ajmwagar/vim-deus'        " 更好的主题插件
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'         " 更多图标插件
+Plug 'junegunn/seoul256.vim'
+
 
 "文件浏览插件
 "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }    " 文件树插件
@@ -291,8 +293,15 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 
 
 
-colorscheme gruvbox
-set background=dark
+"colorscheme gruvbox
+"set background=dark
+
+" seoul256 (dark):
+"   Range:   233 (darkest) ~ 239 (lightest)
+"   Default: 237
+let g:seoul256_background = 234
+colo seoul256
+
 "colors deus
 set termguicolors	
 let g:indent_guides_enable_on_vim_startup = 1
@@ -330,4 +339,8 @@ let g:easy_align_delimiters = {
 \ }
 
 map <nowait> " <Plug>Lightspeed_omni_s
+let g:ale_sign_error = 'X'
+let g:ale_sign_warning = '!'
+
+
 
