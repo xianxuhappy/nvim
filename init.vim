@@ -71,7 +71,8 @@ map sj :set splitbelow<CR>:split<CR>
 noremap C ciw
 
 noremap <LEADER>n :bn<CR>
-noremap <LEADER>p :bp<CR>
+noremap <LEADER>b :bp<CR>
+noremap <LEADER>c :bd<CR>
 
 noremap <up>    : res +5<CR>
 noremap <down>  : res -5<CR>
@@ -99,7 +100,8 @@ Plug 'junegunn/seoul256.vim'
 "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }    " 文件树插件
 "Plug 'francoiscabrol/ranger.vim'                          " ranger插件
 "Plug 'rbgrouleff/bclose.vim'                              " ranger插件
-"Plug 'junegunn/fzf.vim'                                   " 文件模糊查找
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'                                   " 文件模糊查找
 "Plug 'fszymanski/fzf-quickfix', {'on': 'Quickfix'}
 
 "码字相关插件
@@ -126,7 +128,7 @@ Plug 'ggandor/lightspeed.nvim'
 
 "编辑显示插件
 "Plug 'majutsushi/tagbar', { 'on': 'TagbarOpenAutoClose' } " 标签插件
-"Plug 'liuchengxu/vista.vim'                               " tags查看插件
+Plug 'liuchengxu/vista.vim'                               " tags查看插件
 "Plug 'mbbill/undotree/'                                   " 撤销树
 "Plug 'nathanaelkane/vim-indent-guides'                    " 缩进显示插件
 "Plug 'RRethy/vim-illuminate'
@@ -141,7 +143,7 @@ Plug 'dense-analysis/ale'                                         " 纠错插件
 " Git相关插件
 "Plug 'tpope/vim-fugitive'                                         " vim中调用git指令插件
 "Plug 'mhinz/vim-signify'                                          " git显示修改插件
-"Plug 'airblade/vim-gitgutter'                                     " git显示修改插件
+Plug 'airblade/vim-gitgutter'                                     " git显示修改插件
 "Plug 'gisphm/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] } " git忽略文件插件
 
 
@@ -290,6 +292,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = "simple"
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_theme='bubblegum'
 
 
 
@@ -300,7 +306,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 "   Range:   233 (darkest) ~ 239 (lightest)
 "   Default: 237
 let g:seoul256_background = 234
-colo seoul256
+colo seoul256-light
 
 "colors deus
 set termguicolors	
