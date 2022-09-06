@@ -52,7 +52,7 @@ let mapleader = " "
 noremap H ^
 noremap L $
 
-map S :w<CR>
+nmap S :w<CR>
 map Q :q<CR>
 map J 5j
 map K 5k
@@ -73,6 +73,7 @@ noremap C ciw
 noremap <LEADER>n :bn<CR>
 noremap <LEADER>b :bp<CR>
 noremap <LEADER>c :bd<CR>
+noremap <LEADER>f :Ag<CR>
 
 noremap <up>    : res +5<CR>
 noremap <down>  : res -5<CR>
@@ -104,12 +105,13 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'                                   " 文件模糊查找
 "Plug 'fszymanski/fzf-quickfix', {'on': 'Quickfix'}
 
-"码字相关插件
+"码字相关插件"
+Plug 'petertriho/nvim-scrollbar'
 Plug 'tpope/vim-surround'                              " 改变包围符插件
 "Plug 'godlygeek/tabular'                              " 文本对齐插件
 Plug 'junegunn/vim-easy-align'                         " 一款文本对齐插件
 Plug 'Chiel92/vim-autoformat'                          " 代码格式化插件
-"Plug 'gcmt/wildfire.vim'                              " enter 选中最近的文本区
+Plug 'gcmt/wildfire.vim'                              " enter 选中最近的文本区
 Plug 'neoclide/coc.nvim', {'branch': 'release'}        " 代码补全插件
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -204,8 +206,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+"xmap <leader>f  <Plug>(coc-format-selected)
+"nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -226,7 +228,7 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Run the Code Lens action on the current line.
-nmap <leader>cl  <Plug>(coc-codelens-action)
+"nmap <leader>cl  <Plug>(coc-codelens-action)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -347,6 +349,4 @@ let g:easy_align_delimiters = {
 map <nowait> " <Plug>Lightspeed_omni_s
 let g:ale_sign_error = 'X'
 let g:ale_sign_warning = '!'
-
-
 
