@@ -1,13 +1,30 @@
 {
 	"clangd.arguments": ["--enable-config"],
 	"clangd.enabled": true,
+
 	"languageserver": {
-  "golang": {
-		"command": "gopls",
-    "rootPatterns": ["go.mod"],
-    "filetypes": ["go"]
-	  }
+		"svlangserver": {
+			"command": "svlangserver",
+			"filetypes": ["verilog", "systemverilog", "verilog_systemverilog"],
+			"settings": {
+				"systemverilog.includeIndexing": ["**/*.{v,vh,sv,svh}"],
+				"systemverilog.excludeIndexing": ["test/**/*.sv*"],
+				"systemverilog.defines" : [],
+				"systemverilog.launchConfiguration": "verilator -Wall --lint-only",
+				"systemverilog.formatCommand": "verible-verilog-format"
+			}
+    },
+	//	"svls": {
+	//		"command": "svls",
+	//		"filetypes": ["verilog", "systemverilog", "verilog_systemverilog"]
+	//	},
+		"golang": {
+			"command": "gopls",
+			"rootPatterns": ["go.mod"],
+			"filetypes": ["go"]
+		}
 	},
+
 	"explorer.sources":[
 		{
 			"name":"buffer",
