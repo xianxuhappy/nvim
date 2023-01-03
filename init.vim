@@ -362,7 +362,13 @@ let g:easy_align_delimiters = {
 \     'pattern':      ' \(\S\+\s*[;=]\)\@=',
 \     'left_margin':  0,
 \     'right_margin': 0
-\   }
+\   },
+\ ';': {
+\     'pattern':       '[;]',
+\     'left_margin':   0,
+\     'right_margin':  0,
+\     'stick_to_left': 0
+\   },
 \ }
 
 map <nowait> " <Plug>Lightspeed_omni_s
@@ -377,4 +383,5 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 let g:vista_update_on_text_changed = 1
 
+autocmd FileType verilog let g:AutoPairs = {'(':')', '[':']', '{':'}','"':'"', '```':'```', '"""':'"""', "'''":"'''"}
 
