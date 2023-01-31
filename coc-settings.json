@@ -8,16 +8,16 @@
 			"filetypes": ["verilog", "systemverilog", "verilog_systemverilog"],
 			"settings": {
 				"systemverilog.includeIndexing": ["**/*.{v,vh,sv,svh}"],
-				"systemverilog.excludeIndexing": ["test/**/*.sv*"],
+				"systemverilog.excludeIndexing": [],
 				"systemverilog.defines" : [],
-				"systemverilog.launchConfiguration": "verilator -Wall --lint-only",
+				"systemverilog.launchConfiguration": "verilator --lint-only -Wall",
 				"systemverilog.formatCommand": "verible-verilog-format"
 			}
     },
-	//	"svls": {
-	//		"command": "svls",
-	//		"filetypes": ["verilog", "systemverilog", "verilog_systemverilog"]
-	//	},
+		//"svls": {
+		//	"command": "svls",
+		//	"filetypes": ["verilog", "systemverilog", "verilog_systemverilog"]
+		//},
 		"golang": {
 			"command": "gopls",
 			"rootPatterns": ["go.mod"],
