@@ -11,7 +11,8 @@
 				"systemverilog.excludeIndexing": [],
 				"systemverilog.defines" : [],
 				"systemverilog.launchConfiguration": "verilator --lint-only -Wall",
-				"systemverilog.formatCommand": "verible-verilog-format"
+				"systemverilog.formatCommand": "verible-verilog-format",
+				"systemverilog.disableLinting": false
 			}
     },
 		//"svls": {

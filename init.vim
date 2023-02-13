@@ -57,7 +57,7 @@ map Q :q<CR>
 map J 5j
 map K 5k
 "map tt :NERDTreeToggle<CR>
-map <LEADER>t :CocCommand explorer<CR>
+map <LEADER>tt :CocCommand explorer<CR>
 map <LEADER>l <C-w>l
 map <LEADER>j <C-w>j
 map <LEADER>k <C-w>k
@@ -70,18 +70,18 @@ map sj :set splitbelow<CR>:split<CR>
 
 noremap C ciw
 
-noremap <LEADER>n :bn<CR>
-noremap <LEADER>b :bp<CR>
-noremap <LEADER>c :bd<CR>
-noremap <LEADER>fa :Ag<CR>
+noremap <C-j> :bn<CR>
+noremap <C-k> :bp<CR>
+noremap <LEADER>cc :bd<CR>
+noremap <LEADER>/ :Ag<CR>
 
 noremap <up>    : res +5<CR>
 noremap <down>  : res -5<CR>
 noremap <left>  : vertical resize-5<CR>
 noremap <right> : vertical resize+5<CR>
 
-noremap <C-k> 5<C-y>
-noremap <C-j> 5<C-e>
+"noremap <C-k> 5<C-y>
+"noremap <C-j> 5<C-e>
 
 nnoremap Y y$
 
@@ -175,10 +175,10 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-" Use `[g` and `]g` to navigate diagnostics
+" Use `g[` and `g]` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> g[ <Plug>(coc-diagnostic-prev)
+nmap <silent> g] <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation
 nmap <silent> gd <Plug>(coc-definition)
@@ -187,15 +187,15 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window
-nnoremap <silent><LEADER> K :call ShowDocumentation()<CR>
-
-function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfunction
+"nnoremap <silent><LEADER> K :call ShowDocumentation()<CR>
+"
+"function! ShowDocumentation()
+"  if CocAction('hasProvider', 'hover')
+"    call CocActionAsync('doHover')
+"  else
+"    call feedkeys('K', 'in')
+"  endif
+"endfunction
 
 " Highlight the symbol and its references when holding the cursor
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -385,3 +385,4 @@ let g:vista_update_on_text_changed = 1
 
 autocmd FileType verilog let g:AutoPairs = {'(':')', '[':']', '{':'}','"':'"', '```':'```', '"""':'"""', "'''":"'''"}
 
+map <LEADER>te :set splitright<CR>:vsplit<CR>:ter<CR>a
