@@ -69,6 +69,7 @@ map sk :set nosplitbelow<CR>:split<CR>
 map sj :set splitbelow<CR>:split<CR>
 
 noremap C ciw
+noremap ? :noh<CR>
 
 noremap <C-j> :bn<CR>
 noremap <C-k> :bp<CR>
