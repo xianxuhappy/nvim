@@ -11,7 +11,7 @@ set autoindent
 set list
 set listchars=tab:\¦\ ,trail:▫
 set scrolloff=4
-set ttimeoutlen=0
+set ttimeoutlen=2
 set notimeout
 set viewoptions=cursor,folds,slash,unix
 set wrap
@@ -29,6 +29,7 @@ set wildmenu
 set ignorecase
 set smartcase
 set shortmess+=c
+
 set inccommand=split
 set completeopt=longest,noinsert,menuone,noselect,preview
 set ttyfast "should make scrolling faster
@@ -107,7 +108,7 @@ Plug 'junegunn/fzf.vim'                                   " 文件模糊查找
 "Plug 'fszymanski/fzf-quickfix', {'on': 'Quickfix'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-
+""""
 
 "码字相关插件"
 Plug 'petertriho/nvim-scrollbar'
@@ -375,7 +376,13 @@ let g:easy_align_delimiters = {
 map <nowait> " <Plug>Lightspeed_omni_s
 let g:ale_sign_error = 'X'
 let g:ale_sign_warning = '!'
+"au FileType verilog
+"    \ let g:ale_linters = {'verilog' : ['iverilog'],}
 
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.z80 set filetype=z80
+augroup END
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
